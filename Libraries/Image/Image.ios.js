@@ -29,6 +29,7 @@ const requireNativeComponent = require('requireNativeComponent');
 const resolveAssetSource = require('resolveAssetSource');
 
 const ImageViewManager = NativeModules.ImageViewManager;
+const SVGImageViewManager = NativeModules.SVGImageViewManager;
 
 /**
  * A React component for displaying different types of images,
@@ -226,6 +227,7 @@ const Image = createReactClass({
     /**
      * Determines how to resize the image when the frame doesn't match the raw
      * image dimensions.
+    const isSVG = this.props.source.uri && this.props.source.uri.lastIndexOf('.svg') === this.props.source.uri.length - 4;
      *
      * - `cover`: Scale the image uniformly (maintain the image's aspect ratio)
      * so that both dimensions (width and height) of the image will be equal
@@ -314,9 +316,17 @@ const Image = createReactClass({
       success: (width: number, height: number) => void,
       failure?: (error: any) => void,
     ) {
-      ImageViewManager.getSize(uri, success, failure || function() {
-        console.warn('Failed to get size for image: ' + uri);
-      });
+      if (this.isSVG(uri)) {
+        console.error('Not implemented');
+      } else {
+        ImageViewManager.getSize(uri, success, failure || function() {
+          console.warn('Failed to get size for image: ' + uri);
+        });
+      }
+    },
+
+    isSVG: function(uri: string) {
+      return uri && uri.lastIndexOf('.svg') === uri.length - 4;
     },
     /**
      * Prefetches a remote image for later use by downloading it to the disk
@@ -327,7 +337,11 @@ const Image = createReactClass({
      * @return The prefetched image.
      */
     prefetch(url: string) {
-      return ImageViewManager.prefetchImage(url);
+      if (this.isSVG(url)) {
+        ImageViewManager.prefetchImage(url);
+      } else {
+        return ImageViewManager.prefetchImage(url);
+      }
     },
     /**
      * Resolves an asset reference into an object which has the properties `uri`, `width`,
@@ -377,6 +391,20 @@ const Image = createReactClass({
       throw new Error('The <Image> component cannot contain children. If you want to render content on top of the image, consider using aboslute positioning.');
     }
 
+    const isSVG = this.props.source.uri && this.props.source.uri.lastIndexOf('.svg') === this.props.source.uri.length - 4;
+    console.log(isSVG, this.props);
+    if (true) {
+      return (
+        <RCTSVGImageView
+          {...this.props}
+          style={style}
+          resizeMode={resizeMode}
+          tintColor={tintColor}
+          source={sources}
+        />
+      );
+    }
+
     return (
       <RCTImageView
         {...this.props}
@@ -396,5 +424,6 @@ const styles = StyleSheet.create({
 });
 
 const RCTImageView = requireNativeComponent('RCTImageView', Image);
+const RCTSVGImageView = requireNativeComponent('RCTSVGImageView', Image);
 
 module.exports = Image;
