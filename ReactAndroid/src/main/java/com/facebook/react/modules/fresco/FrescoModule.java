@@ -17,6 +17,7 @@ import android.support.annotation.Nullable;
 import com.facebook.common.logging.FLog;
 import com.facebook.common.soloader.SoLoaderShim;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.backends.pipeline.DraweeConfig;
 import com.facebook.imagepipeline.backends.okhttp3.OkHttpImagePipelineConfigFactory;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.listener.RequestListener;
@@ -30,6 +31,7 @@ import com.facebook.react.modules.common.ModuleDataCleaner;
 import com.facebook.react.modules.network.CookieJarContainer;
 import com.facebook.react.modules.network.ForwardingCookieHandler;
 import com.facebook.react.modules.network.OkHttpClientProvider;
+import com.facebook.react.views.imagehelper.svg.CustomImageFormatConfigurator;
 import com.facebook.soloader.SoLoader;
 
 import okhttp3.JavaNetCookieJar;
@@ -105,6 +107,9 @@ public class FrescoModule extends ReactContextBaseJavaModule implements
       SoLoaderShim.setHandler(new FrescoHandler());
       if (mConfig == null) {
         mConfig = getDefaultConfig(getReactApplicationContext());
+
+        DraweeConfig.Builder draweeConfigBuilder = DraweeConfig.newBuilder();
+        CustomImageFormatConfigurator.addCustomDrawableFactories(getReactApplicationContext(), draweeConfigBuilder);
       }
       Context context = getReactApplicationContext().getApplicationContext();
       Fresco.initialize(context, mConfig);
@@ -164,6 +169,7 @@ public class FrescoModule extends ReactContextBaseJavaModule implements
 
     return OkHttpImagePipelineConfigFactory
       .newBuilder(context.getApplicationContext(), client)
+      .setImageDecoderConfig(CustomImageFormatConfigurator.createImageDecoderConfig(context.getApplicationContext()))
       .setNetworkFetcher(new ReactOkHttpNetworkFetcher(client))
       .setDownsampleEnabled(false)
       .setRequestListeners(requestListeners);
