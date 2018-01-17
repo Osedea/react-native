@@ -15,7 +15,7 @@
 
 #import "RCTImageLoader.h"
 #import "RCTImageShadowView.h"
-#import "RCTSVGImageView.h"
+#import "SVGImageView.h"
 
 @implementation RCTSVGImageViewManager
 
@@ -28,24 +28,12 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view
 {
-  return [[RCTSVGImageView alloc] initWithBridge:self.bridge];
+  NSString *urlstring = @"https://en.wikipedia.org/wiki/Scalable_Vector_Graphics#/media/File:SVG_logo.svg";
+  NSURL *url = [NSURL URLWithString:urlstring];
+  
+  return [[SVGImageView alloc] initWithContentsOfURL:url];
 }
 
-RCT_EXPORT_VIEW_PROPERTY(resizeMode, RCTResizeMode)
-RCT_REMAP_VIEW_PROPERTY(source, imageSources, NSArray<RCTImageSource *>);
-RCT_CUSTOM_VIEW_PROPERTY(tintColor, UIColor, RCTSVGImageView)
-{
-  view.fillColor = [RCTConvert UIColor:json] ?: defaultView.tintColor;
-}
-
-RCT_EXPORT_METHOD(prefetchImage:(NSString *)url)
-{
-  if (!url) {
-    reject(@"E_INVALID_URI", @"Cannot prefetch an image for an empty URI", nil);
-    return;
-  }
-
-  [view initWithContentsOfURL:url];
-}
+RCT_EXPORT_VIEW_PROPERTY(url, NSString);
 
 @end

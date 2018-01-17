@@ -391,16 +391,13 @@ const Image = createReactClass({
       throw new Error('The <Image> component cannot contain children. If you want to render content on top of the image, consider using aboslute positioning.');
     }
 
+    console.log(source);
     const isSVG = this.props.source.uri && this.props.source.uri.lastIndexOf('.svg') === this.props.source.uri.length - 4;
     console.log(isSVG, this.props);
     if (true) {
       return (
         <RCTSVGImageView
-          {...this.props}
-          style={style}
-          resizeMode={resizeMode}
-          tintColor={tintColor}
-          source={sources}
+          url={source.uri}
         />
       );
     }

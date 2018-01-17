@@ -226,11 +226,12 @@ target 'NumberTileGame' do
   ]
   # Explicitly include Yoga if you are using RN >= 0.42.0
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
-  
+
   # Third party deps podspec link
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'GLog', :podspec => '../node_modules/react-native/third-party-podspecs/GLog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  pod 'PocketSVG', :podspec => '../node_modules/react-native/third-party-podspecs/PocketSVG.podspec'
 
 end
 ```
@@ -260,11 +261,12 @@ target 'swift-2048' do
   ]
   # Explicitly include Yoga if you are using RN >= 0.42.0
   pod "yoga", :path => "../node_modules/react-native/ReactCommon/yoga"
-  
+
   # Third party deps podspec link
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'GLog', :podspec => '../node_modules/react-native/third-party-podspecs/GLog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  pod 'PocketSVG', :podspec => '../node_modules/react-native/third-party-podspecs/PocketSVG.podspec'
 
 end
 ```
@@ -859,7 +861,7 @@ At this point you can continue developing your app as usual. Refer to our [debug
     if (!document.querySelector('block')) {
       return;
     }
-  
+
     // If we are coming to the page with a hash in it (i.e. from a search, for example), try to get
     // us as close as possible to the correct platform and dev os using the hashtag and block walk up.
     var foundHash = false;

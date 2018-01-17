@@ -64,16 +64,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9DE813201FCF094B0089730D /* PBXContainerItemProxy */ = {
+		9DE813741FCF2A7E0089730D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9DE8131B1FCF094B0089730D /* PocketSVG.xcodeproj */;
+			containerPortal = 9DE8136F1FCF2A7D0089730D /* PocketSVG.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C79800BB1A21CB5300380860;
 			remoteInfo = "PocketSVG (iOS)";
 		};
-		9DE813221FCF094B0089730D /* PBXContainerItemProxy */ = {
+		9DE813761FCF2A7E0089730D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9DE8131B1FCF094B0089730D /* PocketSVG.xcodeproj */;
+			containerPortal = 9DE8136F1FCF2A7D0089730D /* PocketSVG.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C79800F51A21CDFD00380860;
 			remoteInfo = "PocketSVG (Mac)";
@@ -129,11 +129,11 @@
 		58B5115D1A9E6B3D00147676 /* libRCTImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		59AB09281EDE5DD1009F97B5 /* RCTImageShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTImageShadowView.h; sourceTree = "<group>"; };
 		59AB09291EDE5DD1009F97B5 /* RCTImageShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTImageShadowView.m; sourceTree = "<group>"; };
-		9DE8131B1FCF094B0089730D /* PocketSVG.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PocketSVG.xcodeproj; path = ../../../PocketSVG/PocketSVG.xcodeproj; sourceTree = "<group>"; };
 		9DE813241FCF09890089730D /* RCTSVGImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTSVGImageView.h; sourceTree = "<group>"; };
 		9DE813251FCF09890089730D /* RCTSVGImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTSVGImageView.m; sourceTree = "<group>"; };
 		9DE813261FCF098A0089730D /* RCTSVGImageViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTSVGImageViewManager.m; sourceTree = "<group>"; };
 		9DE813271FCF098A0089730D /* RCTSVGImageViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTSVGImageViewManager.h; sourceTree = "<group>"; };
+		9DE8136F1FCF2A7D0089730D /* PocketSVG.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PocketSVG.xcodeproj; path = "../../third-party/PocketSVG-2.2.1/PocketSVG.xcodeproj"; sourceTree = "<group>"; };
 		CCD34C251D4B8FE900268922 /* RCTImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RCTImageCache.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		CCD34C261D4B8FE900268922 /* RCTImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTImageCache.m; sourceTree = "<group>"; };
 		EEF314701C9B0DD30049118E /* RCTImageBlurUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RCTImageBlurUtils.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -144,7 +144,7 @@
 		3D5FA68B1DE4BA290058FD77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9DE8131B1FCF094B0089730D /* PocketSVG.xcodeproj */,
+				9DE8136F1FCF2A7D0089730D /* PocketSVG.xcodeproj */,
 				3D5FA68C1DE4BA290058FD77 /* libRCTNetwork.a */,
 			);
 			name = Frameworks;
@@ -198,11 +198,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9DE8131C1FCF094B0089730D /* Products */ = {
+		9DE813701FCF2A7D0089730D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DE813211FCF094B0089730D /* PocketSVG.framework */,
-				9DE813231FCF094B0089730D /* PocketSVG.framework */,
+				9DE813751FCF2A7E0089730D /* PocketSVG.framework */,
+				9DE813771FCF2A7E0089730D /* PocketSVG.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,8 +317,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9DE8131C1FCF094B0089730D /* Products */;
-					ProjectRef = 9DE8131B1FCF094B0089730D /* PocketSVG.xcodeproj */;
+					ProductGroup = 9DE813701FCF2A7D0089730D /* Products */;
+					ProjectRef = 9DE8136F1FCF2A7D0089730D /* PocketSVG.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -330,18 +330,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9DE813211FCF094B0089730D /* PocketSVG.framework */ = {
+		9DE813751FCF2A7E0089730D /* PocketSVG.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = PocketSVG.framework;
-			remoteRef = 9DE813201FCF094B0089730D /* PBXContainerItemProxy */;
+			remoteRef = 9DE813741FCF2A7E0089730D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9DE813231FCF094B0089730D /* PocketSVG.framework */ = {
+		9DE813771FCF2A7E0089730D /* PocketSVG.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = PocketSVG.framework;
-			remoteRef = 9DE813221FCF094B0089730D /* PBXContainerItemProxy */;
+			remoteRef = 9DE813761FCF2A7E0089730D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -525,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_STATIC_ANALYZER_MODE = deep;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../third-party/PocketSVG-2.2.1";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RCTImage;
@@ -537,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_STATIC_ANALYZER_MODE = deep;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../third-party/PocketSVG-2.2.1";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RCTImage;

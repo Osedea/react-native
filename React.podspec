@@ -170,7 +170,9 @@ Pod::Spec.new do |s|
   s.subspec "RCTImage" do |ss|
     ss.dependency             "React/Core"
     ss.dependency             "React/RCTNetwork"
+    ss.dependency             "PocketSVG"
     ss.source_files         = "Libraries/Image/*.{h,m}"
+    ss.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/PocketSVG\"" }
   end
 
   s.subspec "RCTNetwork" do |ss|

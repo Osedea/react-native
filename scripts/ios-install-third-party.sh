@@ -65,3 +65,4 @@ fetch_and_unpack glog-0.3.4.tar.gz https://github.com/google/glog/archive/v0.3.4
 fetch_and_unpack double-conversion-1.1.5.tar.gz https://github.com/google/double-conversion/archive/v1.1.5.tar.gz 96a8aba1b4ce7d4a7a3c123be26c379c2fed1def
 fetch_and_unpack boost_1_63_0.tar.gz https://github.com/react-native-community/boost-for-react-native/releases/download/v1.63.0-0/boost_1_63_0.tar.gz c3f57e1d22a995e608983effbb752b54b6eab741
 fetch_and_unpack folly-2016.09.26.00.tar.gz https://github.com/facebook/folly/archive/v2016.09.26.00.tar.gz f3b928b5039235bad6cece638c597c6684d1e4e6
+fetch_and_unpack PocketSVG-2.2.1.tar.gz https://github.com/pocketsvg/PocketSVG/archive/2.2.1.tar.gz 6f46a176678667bd3a4c2e6caf25e5b139c77a66
